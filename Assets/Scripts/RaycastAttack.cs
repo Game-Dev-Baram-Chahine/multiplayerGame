@@ -9,7 +9,7 @@ public class RaycastAttack : NetworkBehaviour
 
     [SerializeField] InputAction attack;
     [SerializeField] InputAction attackLocation;
-
+    [SerializeField] NumberField ScoreDisplay;
     [SerializeField] float shootDistance = 5f;
 
     private void OnEnable() { attack.Enable(); attackLocation.Enable(); }
@@ -51,6 +51,7 @@ public class RaycastAttack : NetworkBehaviour
                 {
                     Debug.Log("Dealing damage");
                     health.DealDamageRpc(Damage);
+                    ScoreDisplay.SetNumber(ScoreDisplay.GetNumber() + Damage);
                 }
             }
         }

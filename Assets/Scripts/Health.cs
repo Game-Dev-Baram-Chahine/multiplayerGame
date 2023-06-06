@@ -26,6 +26,7 @@ public class Health : NetworkBehaviour
             NetworkedHealth -= damage;
         }
     }
+    // THis method is for the sheild boolean activaiton and deactivaiton after the shield duration
     public void ActivateShield(float shieldDuration)
     {
         sheildOnUpdate();
