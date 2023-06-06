@@ -7,7 +7,9 @@ public class Health : NetworkBehaviour
 
     [Networked(OnChanged = nameof(NetworkedHealthChanged))]
     public int NetworkedHealth { get; set; } = 100;
-    private static void NetworkedHealthChanged(Changed<Health> changed) {
+    public bool sheildOn = false;
+    private static void NetworkedHealthChanged(Changed<Health> changed)
+    {
         // Here you would add code to update the player's healthbar.
         Debug.Log($"Health changed to: {changed.Behaviour.NetworkedHealth}");
         changed.Behaviour.HealthDisplay.SetNumber(changed.Behaviour.NetworkedHealth);
@@ -15,9 +17,22 @@ public class Health : NetworkBehaviour
 
     [Rpc(RpcSources.All, RpcTargets.StateAuthority)]
     // All players can call this function; only the StateAuthority receives the call.
-    public void DealDamageRpc(int damage) {
+    public void DealDamageRpc(int damage)
+    {
         // The code inside here will run on the client which owns this object (has state and input authority).
         Debug.Log("Received DealDamageRpc on StateAuthority, modifying Networked variable");
-        NetworkedHealth -= damage;
+        if (!sheildOn)
+        {
+            NetworkedHealth -= damage;
+        }
+    }
+    public void ActivateShield(float shieldDuration)
+    {
+        sheildOnUpdate();
+        Invoke("sheildOnUpdate", shieldDuration);
+    }
+    void sheildOnUpdate()
+    {
+        sheildOn = !sheildOn;
     }
 }

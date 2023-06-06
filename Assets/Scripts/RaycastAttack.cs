@@ -47,16 +47,11 @@ public class RaycastAttack : NetworkBehaviour
             {
                 GameObject hitObject = hit.transform.gameObject;
                 Debug.Log("Raycast hit: name=" + hitObject.name + " tag=" + hitObject.tag + " collider=" + hit.collider);
-                if (hitObject.TryGetComponent<CollectibleShield>(out var collectibleShield))
+                if (hitObject.TryGetComponent<Health>(out var health))
                 {
-                    Debug.Log("CollectibleShield");
-                    if (hitObject.TryGetComponent<Health>(out var health) && collectibleShield.sheildOn)
-                    {
-                        Debug.Log("Dealing damage");
-                        health.DealDamageRpc(Damage);
-                    }
+                    Debug.Log("Dealing damage");
+                    health.DealDamageRpc(Damage);
                 }
-
             }
         }
     }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657832, g: 0.49641222, b: 0.57481664, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -462,8 +462,8 @@ GameObject:
   - component: {fileID: 780059187}
   - component: {fileID: 780059186}
   - component: {fileID: 780059185}
-  - component: {fileID: 780059188}
   - component: {fileID: 780059184}
+  - component: {fileID: 780059188}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
