@@ -51,7 +51,11 @@ public class RaycastAttack : NetworkBehaviour
                 {
                     Debug.Log("Dealing damage");
                     health.DealDamageRpc(Damage);
-                    ScoreDisplay.SetNumber(ScoreDisplay.GetNumber() + Damage);
+                    if (hitObject.TryGetComponent<ScoreManager>(out var scoreManager))
+                    {
+                        Debug.Log("Adding score");
+                        scoreManager.AddScore(Damage);
+                    }
                 }
             }
         }
