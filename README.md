@@ -10,3 +10,9 @@
 ## Links
 * [Play On Itch.io](https://gamedevbc.itch.io/multiplayer-homework)
 * Code based on the [Fusion Shared Mode Tutorial](https://doc.photonengine.com/fusion/current/tutorials/shared-mode-basics/overview)
+
+## Scripts we created or updated
+* [CollectibleShield](https://github.com/Game-Dev-Baram-Chahine/multiplayerGame/blob/main/Assets/Scripts/CollectibleShield.cs)
+* [ScoreManager](https://github.com/Game-Dev-Baram-Chahine/multiplayerGame/blob/main/Assets/Scripts/ScoreManager.cs)
+* [RaycastAttack](https://github.com/Game-Dev-Baram-Chahine/multiplayerGame/blob/main/Assets/Scripts/RaycastAttack.cs)
+* [Health](https://github.com/Game-Dev-Baram-Chahine/multiplayerGame/blob/main/Assets/Scripts/Health.cs)
